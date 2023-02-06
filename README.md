@@ -1,0 +1,25 @@
+# Jogo Pedra, Papel ou Tesoura
+
+### Jogo construido em HTML, CSS E JAVASCRIPT
+- O jogador deverá escolher a opção de jogo: melhor de 3 partidas ou melhor de 5 partidas.
+- O jogador deverá escolher o objeto: Pedra, Papel ou Tesoura.
+- Após escolher a opção o jogador será informado se ganhou ou perdeu a partida e depois o jogo.
+- Se ganhou o jogo será parabenizado.
+- Se perdeu será informado e será oferecido uma revanche.
+
+#### Etapas:
+- [ ] Construir HTML básico
+- [ ] Boas vindas ao jogador (sem usar prompt) e instruções
+- [ ] Lógica do objeto sorteado
+- [ ] Lógica do resultado da partida (ganhou ou perdeu)
+- [ ] Lógica da quantidade de partidas
+- [ ] Lógica do resultado do jogo (ganhou ou perdeu)
+- [ ] Lógica da revanche
+- [ ] Lógica reiniciar
+- [ ] Boas vindas ao jogador (sem usar prompt)
+- [ ] HTML mostrando quantidade de partidas
+- [ ] HTML mostrando o objeto a escolher
+- [ ] HTML mostrando ganhou ou perdeu partida
+- [ ] HTML mostrando ganhou ou perdeu jogo
+- [ ] HTML mostrando fim do jogo, revanche e reinício
+- [ ] Refatorar
