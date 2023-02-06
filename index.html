@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Jogo Pedra, Papel ou Tesoura</title>
+
+</head>
+<body>
+    <header class="titulo">
+        <h1>Jogo pedra, papel ou tesoura</h1>
+
+    </header>
+
+    <main>
+        <div class="intrucoes">
+            <h2 id="bemvindo"></h2>
+            <li>O jogador deverá escolher a opção de jogo: melhor de 3 partidas ou melhor de 5 partidas.</li>
+            <li>O jogador deverá escolher o objeto: Pedra, Papel ou Tesoura.</li>
+            <li>Após escolher a opção o jogador será informado se ganhou ou perdeu a partida e depois o jogo.</li>
+            <li>Se ganhou o jogo será parabenizado.</li>
+            <li>Se perdeu será informado e será oferecido uma revanche.</li><br>
+        </div>
+        <div class="jogo">
+            <h3>Digite seu chute:</h3>
+            <input type="text" id="input-chute" required placeholder="CHUTE">
+            <input type="submit" id="submit-tentativa" value="OK"><br>
+            <p id="p-painel">Vamos lá!</p>
+            <p id="p-numeroTentativas">Nenhuma tentativa</p>
+            <input type="submit" id="submit-reiniciar" value="RECOMEÇAR">
+        </div>
+    </main>
+    
+
+    <script src="main.js"></script>
+
+</body>
+</html>

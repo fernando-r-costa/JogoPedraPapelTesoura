@@ -8,8 +8,8 @@
 - Se perdeu será informado e será oferecido uma revanche.
 
 #### Etapas:
-- [ ] Construir HTML básico
-- [ ] Boas vindas ao jogador (sem usar prompt) e instruções
+- [x] Construir HTML básico
+- [ ] Boas vindas ao jogador e instruções
 - [ ] Lógica do objeto sorteado
 - [ ] Lógica do resultado da partida (ganhou ou perdeu)
 - [ ] Lógica da quantidade de partidas
