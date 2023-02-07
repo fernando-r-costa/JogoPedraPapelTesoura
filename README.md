@@ -9,7 +9,7 @@
 
 #### Etapas:
 - [x] Construir HTML básico
-- [ ] Boas vindas ao jogador e instruções
+- [x] Boas vindas ao jogador e instruções
 - [ ] Lógica do objeto sorteado
 - [ ] Lógica do resultado da partida (ganhou ou perdeu)
 - [ ] Lógica da quantidade de partidas
