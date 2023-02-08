@@ -11,7 +11,7 @@
 - [x] Construir HTML básico
 - [x] Boas vindas ao jogador e instruções
 - [x] Lógica do objeto sorteado
-- [ ] Lógica do resultado da partida (ganhou ou perdeu)
+- [x] Lógica do resultado da partida (ganhou ou perdeu)
 - [ ] Lógica da quantidade de partidas
 - [ ] Lógica do resultado do jogo (ganhou ou perdeu)
 - [ ] Lógica da revanche
