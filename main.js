@@ -6,29 +6,43 @@ function sorteia(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
 let objetos = ['pedra', 'papel', 'tesoura'];
 let objSorteado = objetos[sorteia(0, 2)];
 console.log(objSorteado);
+
+let numPartidas = document.getElementById("input-partidas");
 let objEscolhido = document.getElementById("input-objetoEscolhido");
-const tentativa = document.getElementById("submit-tentativa");
-objEscolhido.focus();
+let tentativa = document.getElementById("submit-tentativa");
+
+let painel = document.getElementById("p-painel");
+function infoPainel(frase) {
+    painel.innerText = frase;
+}
+
+let pontosJogador = 0;
+let pontosComputador = 0;
+let mostraPontosJogador = document.getElementById("p-pontosJogador")
+let mostraPontosComputador = document.getElementById("p-pontosComputador")
 
 function compara() {
     if (objEscolhido.value === objSorteado) {
-        console.log("empate");
+        infoPainel("Empate");
         objEscolhido.focus();
 
     } else if (objEscolhido.value == 'pedra' && objSorteado == 'tesoura' ||
             objEscolhido.value == 'papel' && objSorteado == 'pedra' ||
             objEscolhido.value == 'tesoura' && objSorteado == 'papel') {
-        console.log('Você ganhou!');
+        infoPainel('Você ganhou!');
+        pontosJogador++
+        mostraPontosJogador.innerText = `Pontos do Jogador: ${pontosJogador}`;
         objEscolhido.focus();
 
     } else if (objEscolhido.value == 'pedra' && objSorteado == 'papel' ||
             objEscolhido.value == 'papel' && objSorteado == 'tesoura' ||
             objEscolhido.value == 'tesoura' && objSorteado == 'pedra') {
-        console.log('Você perdeu!');
+        infoPainel('Você perdeu!');
+        pontosComputador++
+        mostraPontosComputador.innerText = `Pontos do Computador: ${pontosComputador}`;
         objEscolhido.focus();
     }
 }

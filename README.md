@@ -12,6 +12,7 @@
 - [x] Boas vindas ao jogador e instruções
 - [x] Lógica do objeto sorteado
 - [x] Lógica do resultado da partida (ganhou ou perdeu)
+- [x] Lógica do placar da partida
 - [ ] Lógica da quantidade de partidas
 - [ ] Lógica do resultado do jogo (ganhou ou perdeu)
 - [ ] Lógica da revanche
