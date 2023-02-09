@@ -15,6 +15,7 @@
 - [x] Lógica do placar da partida
 - [x] Lógica da quantidade de partidas
 - [x] Lógica do resultado do jogo (ganhou ou perdeu)
+- [x] Lógica do fim do jogo
 - [ ] Lógica da revanche
 - [ ] Lógica reiniciar
 - [ ] Boas vindas ao jogador (sem usar prompt)
