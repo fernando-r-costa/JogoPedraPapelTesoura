@@ -20,7 +20,7 @@
 - [x] Lógica desistir
 - [x] Boas vindas ao jogador (sem usar prompt)
 - [x] Consertando bugs da revanche e do desistir
-- [ ] HTML mostrando quantidade de partidas
+- [x] HTML mostrando quantidade de partidas
 - [ ] HTML mostrando o objeto a escolher
 - [ ] HTML mostrando ganhou ou perdeu partida
 - [ ] HTML mostrando ganhou ou perdeu jogo

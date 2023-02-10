@@ -7,12 +7,14 @@ let numPartidas = document.getElementById("input-partidas");
 let objEscolhido = document.getElementById("input-objetoEscolhido");
 let tentativa = document.getElementById("submit-tentativa");
 let painel = document.getElementById("p-painel");
+let mostraPartidas = document.getElementById("p-partidas");
 let mostraPontosJogador = document.getElementById("p-pontosJogador");
 let mostraPontosComputador = document.getElementById("p-pontosComputador");
 let revanche = document.getElementById("submit-revanche");
 let desistir = document.getElementById("submit-desistir");
 let fim = document.getElementById("fim");
 let final = document.getElementById("p-final");
+let qtePartidas = 0;
 let pontosJogador = 0;
 let pontosComputador = 0;
 
@@ -48,14 +50,18 @@ function compara() {
     let objSorteado = objetos[sorteia(0, 2)];
     if (objEscolhido.value === objSorteado) {
         infoPainel(`Empate, ${objSorteado}`);
+        qtePartidas++
+        mostraPartidas.innerText = `Partidas: ${qtePartidas}`
         objEscolhido.focus();
         
     } else if (objEscolhido.value == 'pedra' && objSorteado == 'tesoura' ||
     objEscolhido.value == 'papel' && objSorteado == 'pedra' ||
     objEscolhido.value == 'tesoura' && objSorteado == 'papel') {
         infoPainel(`Você ganhou! ${objSorteado}`);
+        qtePartidas++
         pontosJogador++
         mostraPontosJogador.innerText = `Pontos do Jogador: ${pontosJogador}`;
+        mostraPartidas.innerText = `Partidas: ${qtePartidas}`
         objEscolhido.focus();
         partida();
         
@@ -63,8 +69,10 @@ function compara() {
     objEscolhido.value == 'papel' && objSorteado == 'tesoura' ||
     objEscolhido.value == 'tesoura' && objSorteado == 'pedra') {
         infoPainel(`Você perdeu! ${objSorteado}`);
+        qtePartidas++
         pontosComputador++
         mostraPontosComputador.innerText = `Pontos do Computador: ${pontosComputador}`;
+        mostraPartidas.innerText = `Partidas: ${qtePartidas}`
         objEscolhido.focus();
         partida();
     }
@@ -75,6 +83,7 @@ function infoPainel(frase) {
 }
 
 function reinicio() {
+    qtePartidas = 0;
     pontosJogador = 0;
     pontosComputador = 0;
     numPartidas.value = "";
@@ -83,6 +92,7 @@ function reinicio() {
     tentativa.hidden = false;
     revanche.hidden = true;
     desistir.hidden = true;
+    mostraPartidas.innerText = `Partidas: ${qtePartidas}`
     mostraPontosJogador.innerText = `Pontos do Jogador: ${pontosJogador}`;
     mostraPontosComputador.innerText = `Pontos do Computador: ${pontosComputador}`;
 }
