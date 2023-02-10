@@ -1,16 +1,24 @@
-// let nomeJogador = prompt("INFORME O SEU NOME?");
-// const bemVindo = document.getElementById("bemvindo").innerText = `Seja bem vindo, ${nomeJogador}!`;
-
+let instrucoes = document.getElementById("intrucoes");
+let jogo = document.getElementById("jogo");
+let nomeJogador = document.getElementById("input-nome");
+let iniciar = document.getElementById("submit-nome");
+let pronto = document.getElementById("p-pronto");
 let numPartidas = document.getElementById("input-partidas");
 let objEscolhido = document.getElementById("input-objetoEscolhido");
 let tentativa = document.getElementById("submit-tentativa");
 let painel = document.getElementById("p-painel");
-let mostraPontosJogador = document.getElementById("p-pontosJogador")
-let mostraPontosComputador = document.getElementById("p-pontosComputador")
+let mostraPontosJogador = document.getElementById("p-pontosJogador");
+let mostraPontosComputador = document.getElementById("p-pontosComputador");
 let revanche = document.getElementById("submit-revanche");
 let desistir = document.getElementById("submit-desistir");
 let pontosJogador = 0;
 let pontosComputador = 0;
+
+function inicio() {
+    instrucoes.hidden = true;
+    jogo.hidden = false;
+    pronto.innerText = `Boa Sorte, ${nomeJogador.value}!!!`;
+}
 
 function sorteia(min, max) {
     min = Math.ceil(min);
@@ -73,6 +81,7 @@ function fim() {
     document.write("Obrigado por jogar! Até a próxima!")
 }
 
+iniciar.onclick = inicio;
 tentativa.onclick = compara;
 revanche.onclick = reinicio;
 desistir.onclick = fim;
