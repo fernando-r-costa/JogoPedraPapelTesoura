@@ -11,6 +11,8 @@ let mostraPontosJogador = document.getElementById("p-pontosJogador");
 let mostraPontosComputador = document.getElementById("p-pontosComputador");
 let revanche = document.getElementById("submit-revanche");
 let desistir = document.getElementById("submit-desistir");
+let fim = document.getElementById("fim");
+let final = document.getElementById("p-final");
 let pontosJogador = 0;
 let pontosComputador = 0;
 
@@ -38,8 +40,7 @@ function partida() {
         tentativa.hidden = true;
         revanche.hidden = false;
         desistir.hidden = false;
-    } 
-    
+    }     
 }
 
 function compara() {
@@ -74,14 +75,26 @@ function infoPainel(frase) {
 }
 
 function reinicio() {
-    window.location.reload();
+    pontosJogador = 0;
+    pontosComputador = 0;
+    numPartidas.value = "";
+    numPartidas.focus();
+    objEscolhido.value = "";
+    tentativa.hidden = false;
+    revanche.hidden = true;
+    desistir.hidden = true;
+    mostraPontosJogador.innerText = `Pontos do Jogador: ${pontosJogador}`;
+    mostraPontosComputador.innerText = `Pontos do Computador: ${pontosComputador}`;
 }
 
-function fim() {
-    document.write("Obrigado por jogar! Até a próxima!")
+function desiste() {
+    jogo.hidden = true;
+    fim.hidden = false;
+    final.innerText = `${nomeJogador.value} obrigado por jogar!
+                        Até a próxima!`
 }
 
 iniciar.onclick = inicio;
 tentativa.onclick = compara;
 revanche.onclick = reinicio;
-desistir.onclick = fim;
+desistir.onclick = desiste;
