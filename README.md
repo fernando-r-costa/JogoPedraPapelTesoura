@@ -16,8 +16,8 @@
 - [x] Lógica da quantidade de partidas
 - [x] Lógica do resultado do jogo (ganhou ou perdeu)
 - [x] Lógica do fim do jogo
-- [ ] Lógica da revanche
-- [ ] Lógica reiniciar
+- [x] Lógica da revanche
+- [x] Lógica desistir
 - [ ] Boas vindas ao jogador (sem usar prompt)
 - [ ] HTML mostrando quantidade de partidas
 - [ ] HTML mostrando o objeto a escolher
