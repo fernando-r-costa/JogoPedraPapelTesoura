@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 
     <title>Jogo Pedra, Papel ou Tesoura</title>
 
 </head>
+
 <body>
     <header class="titulo">
         <h1>Jogo pedra, papel ou tesoura</h1><br>
@@ -33,13 +35,29 @@
             <input type="text" id="input-nome" required placeholder="NOME DO JOGADOR">
             <input type="submit" id="submit-nome" value="INICIAR"><br>
         </div>
+
         <div id="jogo" hidden>
             <p id="p-pronto"></p><br>
-            <h3>Digite quantidade de partidas:</h3>
-            <input type="text" id="input-partidas" required placeholder="PARTIDAS">
-            <h3>Digite seu objeto:</h3>
-            <input type="text" id="input-objetoEscolhido" required placeholder="PEDRA, PAPEL OU TESOURA">
-            <input type="submit" id="submit-tentativa" value="OK"><br>
+
+            <fieldset>
+                <legend>Escolha a quantidade de partidas:</legend>
+                <label for="radio-3partidas"><input type="radio" name="partidas" value="3" id="radio-3partidas">3 partidas</label>
+
+                <label for="radio-5partidas"><input type="radio" name="partidas" value="5" id="radio-5partidas">5 partidas</label>
+            </fieldset><br>
+
+            <ul id="objEscolhido">
+                <li>
+                    <input type="image" id="button-pedra" src="icons8-minério-de-ouro-96.png">
+                </li>
+                <li>
+                    <input type="image" id="button-papel" src="icons8-documentos-100.png">
+                </li>
+                <li>
+                    <input type="image" id="button-tesoura" src="icons8-tesouras-de-costura-100.png">
+                </li>
+            </ul>
+            
             <p id="p-painel">Vamos lá!</p>
             <p id="p-placar">Placar</p>
             <p id="p-partidas">Partidas: </p>
@@ -47,12 +65,15 @@
             <p id="p-pontosComputador">Pontos do Computador: </p>
             <input type="submit" id="submit-revanche" value="REVANCHE" hidden>
             <input type="submit" id="submit-desistir" value="DESISTIR" hidden>
+        
         </div>
+        
         <div id="fim" hidden>
-            <br><p id="p-final"></p><br>
+            <br>
+            <p id="p-final"></p><br>
         </div>
+
     </main>
-    
 
     <script src="main.js"></script>
 

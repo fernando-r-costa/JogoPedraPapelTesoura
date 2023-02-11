@@ -21,8 +21,9 @@
 - [x] Boas vindas ao jogador (sem usar prompt)
 - [x] Consertando bugs da revanche e do desistir
 - [x] HTML mostrando quantidade de partidas
-- [ ] HTML mostrando o objeto a escolher
-- [ ] HTML mostrando ganhou ou perdeu partida
-- [ ] HTML mostrando ganhou ou perdeu jogo
-- [ ] HTML mostrando fim do jogo, revanche e reinício
+- [x] HTML mostrando o objeto a escolher
+- [x] HTML mostrando ganhou ou perdeu partida
+- [x] HTML mostrando ganhou ou perdeu jogo
+- [x] HTML mostrando fim do jogo, revanche e reinício
+- [ ] Melhorar experiência jogador
 - [ ] Refatorar

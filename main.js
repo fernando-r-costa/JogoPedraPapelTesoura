@@ -1,11 +1,13 @@
 let instrucoes = document.getElementById("intrucoes");
-let jogo = document.getElementById("jogo");
 let nomeJogador = document.getElementById("input-nome");
 let iniciar = document.getElementById("submit-nome");
+let jogo = document.getElementById("jogo");
 let pronto = document.getElementById("p-pronto");
-let numPartidas = document.getElementById("input-partidas");
-let objEscolhido = document.getElementById("input-objetoEscolhido");
-let tentativa = document.getElementById("submit-tentativa");
+let partidas = document.getElementsByName("partidas");
+let tentativa = document.getElementById("objEscolhido");
+let buttonPedra = document.getElementById("button-pedra");
+let buttonPapel = document.getElementById("button-papel");
+let buttonTesoura = document.getElementById("button-tesoura");
 let painel = document.getElementById("p-painel");
 let mostraPartidas = document.getElementById("p-partidas");
 let mostraPontosJogador = document.getElementById("p-pontosJogador");
@@ -14,15 +16,20 @@ let revanche = document.getElementById("submit-revanche");
 let desistir = document.getElementById("submit-desistir");
 let fim = document.getElementById("fim");
 let final = document.getElementById("p-final");
+let objEscolhido = "";
 let qtePartidas = 0;
 let pontosJogador = 0;
 let pontosComputador = 0;
+let numPartidas = 0;
+
+
 
 function inicio() {
     instrucoes.hidden = true;
     jogo.hidden = false;
     pronto.innerText = `Boa Sorte, ${nomeJogador.value}!!!`;
 }
+
 
 function sorteia(min, max) {
     min = Math.ceil(min);
@@ -31,49 +38,66 @@ function sorteia(min, max) {
 }
 
 function partida() {
-    if (pontosJogador == (numPartidas.value - parseInt(numPartidas.value / 2))) {
+    for (var i = 0 in partidas) {
+        if (partidas[i].checked) {
+            numPartidas = partidas[i].value;
+        }
+    }
+    if (pontosJogador == (numPartidas - parseInt(numPartidas / 2))) {
         infoPainel('Você ganhou o jogo!');
         tentativa.hidden = true;
         revanche.hidden = false;
         desistir.hidden = false;
-        
-    } else if (pontosComputador == (numPartidas.value - parseInt(numPartidas.value / 2))) {
+
+    } else if (pontosComputador == (numPartidas - parseInt(numPartidas / 2))) {
         infoPainel('Você perdeu o jogo!');
         tentativa.hidden = true;
         revanche.hidden = false;
         desistir.hidden = false;
-    }     
+    }
+}
+
+function objPedra() {
+    objEscolhido = "pedra";
+    compara();
+}
+
+function objPapel() {
+    objEscolhido = "papel";
+    compara();
+}
+
+function objTesoura() {
+    objEscolhido = "tesoura";
+    compara();
 }
 
 function compara() {
     let objetos = ['pedra', 'papel', 'tesoura'];
     let objSorteado = objetos[sorteia(0, 2)];
-    if (objEscolhido.value === objSorteado) {
+    if (objEscolhido === objSorteado) {
         infoPainel(`Empate, ${objSorteado}`);
         qtePartidas++
         mostraPartidas.innerText = `Partidas: ${qtePartidas}`
-        objEscolhido.focus();
-        
-    } else if (objEscolhido.value == 'pedra' && objSorteado == 'tesoura' ||
-    objEscolhido.value == 'papel' && objSorteado == 'pedra' ||
-    objEscolhido.value == 'tesoura' && objSorteado == 'papel') {
+
+    } else if (objEscolhido == 'pedra' && objSorteado == 'tesoura' ||
+        objEscolhido == 'papel' && objSorteado == 'pedra' ||
+        objEscolhido == 'tesoura' && objSorteado == 'papel') {
         infoPainel(`Você ganhou! ${objSorteado}`);
         qtePartidas++
         pontosJogador++
         mostraPontosJogador.innerText = `Pontos do Jogador: ${pontosJogador}`;
         mostraPartidas.innerText = `Partidas: ${qtePartidas}`
-        objEscolhido.focus();
         partida();
-        
-    } else if (objEscolhido.value == 'pedra' && objSorteado == 'papel' ||
-    objEscolhido.value == 'papel' && objSorteado == 'tesoura' ||
-    objEscolhido.value == 'tesoura' && objSorteado == 'pedra') {
+
+    } else if (objEscolhido == 'pedra' && objSorteado == 'papel' ||
+        objEscolhido == 'papel' && objSorteado == 'tesoura' ||
+        objEscolhido == 'tesoura' && objSorteado == 'pedra') {
         infoPainel(`Você perdeu! ${objSorteado}`);
         qtePartidas++
         pontosComputador++
         mostraPontosComputador.innerText = `Pontos do Computador: ${pontosComputador}`;
         mostraPartidas.innerText = `Partidas: ${qtePartidas}`
-        objEscolhido.focus();
         partida();
     }
 }
@@ -87,8 +111,7 @@ function reinicio() {
     pontosJogador = 0;
     pontosComputador = 0;
     numPartidas.value = "";
-    numPartidas.focus();
-    objEscolhido.value = "";
+    objEscolhido = "";
     tentativa.hidden = false;
     revanche.hidden = true;
     desistir.hidden = true;
@@ -105,6 +128,9 @@ function desiste() {
 }
 
 iniciar.onclick = inicio;
-tentativa.onclick = compara;
 revanche.onclick = reinicio;
 desistir.onclick = desiste;
+
+buttonPedra.onclick = objPedra;
+buttonPapel.onclick = objPapel;
+buttonTesoura.onclick = objTesoura;
