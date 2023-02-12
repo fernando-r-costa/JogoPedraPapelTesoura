@@ -25,5 +25,5 @@
 - [x] HTML mostrando ganhou ou perdeu partida
 - [x] HTML mostrando ganhou ou perdeu jogo
 - [x] HTML mostrando fim do jogo, revanche e reinício
-- [ ] Melhorar experiência jogador
+- [X] Melhorar experiência jogador
 - [ ] Refatorar

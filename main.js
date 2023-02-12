@@ -1,4 +1,4 @@
-let instrucoes = document.getElementById("intrucoes");
+let instrucoes = document.getElementById("instrucoes");
 let nomeJogador = document.getElementById("input-nome");
 let iniciar = document.getElementById("submit-nome");
 let jogo = document.getElementById("jogo");
@@ -21,6 +21,7 @@ let qtePartidas = 0;
 let pontosJogador = 0;
 let pontosComputador = 0;
 let numPartidas = 0;
+
 
 
 
@@ -76,14 +77,16 @@ function compara() {
     let objetos = ['pedra', 'papel', 'tesoura'];
     let objSorteado = objetos[sorteia(0, 2)];
     if (objEscolhido === objSorteado) {
-        infoPainel(`Empate, ${objSorteado}`);
+        infoPainel(`Empatou!
+                    O computador jogou ${objSorteado}.`);
         qtePartidas++
         mostraPartidas.innerText = `Partidas: ${qtePartidas}`
 
     } else if (objEscolhido == 'pedra' && objSorteado == 'tesoura' ||
         objEscolhido == 'papel' && objSorteado == 'pedra' ||
         objEscolhido == 'tesoura' && objSorteado == 'papel') {
-        infoPainel(`Você ganhou! ${objSorteado}`);
+        infoPainel(`Você ganhou!
+                    O computador jogou ${objSorteado}.`);
         qtePartidas++
         pontosJogador++
         mostraPontosJogador.innerText = `Pontos do Jogador: ${pontosJogador}`;
@@ -93,7 +96,8 @@ function compara() {
     } else if (objEscolhido == 'pedra' && objSorteado == 'papel' ||
         objEscolhido == 'papel' && objSorteado == 'tesoura' ||
         objEscolhido == 'tesoura' && objSorteado == 'pedra') {
-        infoPainel(`Você perdeu! ${objSorteado}`);
+        infoPainel(`Você perdeu!
+                    O computador jogou ${objSorteado}.`);
         qtePartidas++
         pontosComputador++
         mostraPontosComputador.innerText = `Pontos do Computador: ${pontosComputador}`;
